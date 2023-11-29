@@ -1,36 +1,22 @@
 # SpaceRegister
 
-Welcome to your new gem! In this directory, you'll find the files you need to be able to package up your Ruby library into a gem. Put your Ruby code in the file `lib/space_register`. To experiment with that code, run `bin/console` for an interactive prompt.
+A gem `SpaceRegister` se comunica diretamente com o [Centro de Comando Espacial](https://github.com/carolinakarklis/new_space_center) via API, criando veículos e viagens espaciais.
 
-TODO: Delete this and the text above, and describe your gem
 
-## Installation
+## Utilização
 
-Add this line to your application's Gemfile:
+A classe `SpaceRegister` tem os seguintes métodos: `get_vehicle`, `get_vehicles`, `create_vehicle`, `update_vehicle`, `get_travels`, `create_travels`, `update_travel`, `fail_travel`, `abort_travel`, `start_travel`. 
 
-```ruby
-gem 'space_register'
-```
+Para visualizar um veículo específico, por exemplo:
 
-And then execute:
+**Input**
 
-    $ bundle install
+`SpaceRegister.get_vehicle(id: 2)`
 
-Or install it yourself as:
+**Output**
+* Caso encontre o registro:
+   ```#<struct SpaceCenterClient::Result success=true, data=#<OpenStruct name="Foguete", km_per_hour=200, travel_count=0>>```
+* Caso não encontre: `#<struct SpaceCenterClient::Result success=false, data="Record not found">`
 
-    $ gem install space_register
-
-## Usage
-
-TODO: Write usage instructions here
-
-## Development
-
-After checking out the repo, run `bin/setup` to install dependencies. Then, run `rake spec` to run the tests. You can also run `bin/console` for an interactive prompt that will allow you to experiment.
-
-To install this gem onto your local machine, run `bundle exec rake install`. To release a new version, update the version number in `version.rb`, and then run `bundle exec rake release`, which will create a git tag for the version, push git commits and tags, and push the `.gem` file to [rubygems.org](https://rubygems.org).
-
-## Contributing
-
-Bug reports and pull requests are welcome on GitHub at https://github.com/[USERNAME]/space_register.
+Os métodos do SpaceRegister sempre retornam uma struct de sucesso ou erro.
 
