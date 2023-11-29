@@ -8,7 +8,7 @@ class SpaceCenterClient
 
   def initialize(url, params={})
     @uri = URI(url)
-    @headers = { 'Authorization' => 'Bearer bf49997d62ddce7413e193d93c7c6fe9'}
+    @headers = { 'Authorization' => 'Bearer ec68339123cd4cc913ea19ec970c96d4'}
     @params = params
   end
 
